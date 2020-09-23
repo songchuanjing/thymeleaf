@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<thead>
+<th>id</th>
+<th>nianling</th>
+<th>xingming</th>
+</thead>
+<tbody>
+<tr th:each="user,iterStat:${list}">
+    <td th:text="${user.id}"></td>
+    <td th:text="${user.age}"></td>
+    <td th:text="${user.name}"></td>
+</tr>
+</tbody>
+<input type="text" name="names" th:value="${userName}">
+<em th:size="${userName}"></em>
+<span th:text="'huanyin'+${userName}+'xuexi'"></span>
+<span th:text="|huanyinglai:${userName}xuexi|"></span>
+<br>
+<h1 th:if="${flag=='yes'}">zhonggong</h1>
+<h1 th:unless="${flag=='no'}">youjiuye</h1>
+<div th:switch="${menu}"/>
+<p th:case="'admin'">11</p>
+<p th:case="${manager}">222</p>
+
+<br>
+<div th:insert="~{index3 :: copy}">
+    <div th:replace="~{index3 :: copy}"></div>
+    <div th:include="~{index3 :: copy}"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<span th:text="${user.id}"></span>
+<span th:text="${user.name}"></span>
+<span th:text="${map.id}"></span>
+<span th:text="${map.age}"></span>
+<br>
+shijian:<span th:text="${#dates.format(date,'yyyy-MM-dd')}"></span>
+jiner:<span th:text="'￥'+${#numbers.formatDecimal(price,1,2)}"></span>
+<p th:text="${#strings.abbreviate(strText,60)}"></p>
+<span th:if="${!#strings.isEmpty(strText)}"></span>
+<span th:text="${#strings.substring(strText,0,4)}"></span>
+</body>
+</html>
